@@ -1,0 +1,24 @@
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  /* background-color: aquamarine; */
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    color: $title-text-color;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+  }
+  &--no-padding-bottom {
+    padding-bottom: 0;
+  }
+
+  &--dark-bgcolor {
+    background: #f5f4fa;
+  }
+}
