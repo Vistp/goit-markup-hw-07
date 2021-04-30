@@ -229,6 +229,20 @@ p {
   background-color: #188ce8;
 }
 
+.footer__button {
+  position: relative;
+  margin-left: 12px;
+  padding-left: 29px;
+  padding-right: 0;
+  text-align: left;
+}
+
+.button__icon {
+  position: absolute;
+  top: 10px;
+  right: 28px;
+}
+
 .hero {
   text-align: center;
   background-color: #c4c4c4;
@@ -643,6 +657,14 @@ p {
   display: flex;
 }
 
+.company-links__item + .company-links__item {
+  margin-left: 10px;
+}
+
+.company-links__icon {
+  fill: #ffffff;
+}
+
 .company-links__link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -661,17 +683,8 @@ p {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.company-links__link:hover,
-.company-links__link:focus {
+.company-links__link:hover, .company-links__link:focus {
   background-color: #2196f3;
-}
-
-.company-links__item + .company-links__item {
-  margin-left: 10px;
-}
-
-.company-links__icon {
-  fill: #ffffff;
 }
 
 .footer__email-input {
@@ -718,21 +731,6 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer__button {
-  position: relative;
-  margin-left: 12px;
-  padding-left: 29px;
-  padding-right: 0;
-  text-align: left;
-}
-
-.button__icon {
-  position: absolute;
-  top: 10px;
-  right: 28px;
-}
-
-/* modal */
 .backdrop {
   position: fixed;
   top: 0;
@@ -776,6 +774,14 @@ p {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal__title {
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: #212121;
+}
+
 .button-modal {
   position: absolute;
   right: 8px;
@@ -803,17 +809,8 @@ p {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-modal__icon:focus,
-.button-modal__icon:hover {
+.button-modal__icon:focus, .button-modal__icon:hover {
   fill: #2196f3;
-}
-
-.modal__title {
-  margin-bottom: 12px;
-  font-size: 20px;
-  line-height: 1.15;
-  text-align: center;
-  color: #212121;
 }
 
 .form {
@@ -838,12 +835,50 @@ p {
   margin-bottom: 10px;
 }
 
+.form__check-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.form__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.form__check-link {
+  color: #2196f3;
+}
+
+.form__button {
+  display: block;
+  margin: 0 auto;
+}
+
 .form__icon {
   position: absolute;
   top: 11px;
   left: 12px;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form__field:hover + .form__icon,
+.form__field:focus + .form__icon {
+  fill: #2196f3;
 }
 
 .form__field {
@@ -856,22 +891,11 @@ p {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form__field:hover,
-.form__field:focus {
+.form__field:hover, .form__field:focus {
   border-color: #2196f3;
   outline: none;
 }
 
-.form__field:hover + .form__icon,
-.form__field:focus + .form__icon {
-  fill: #2196f3;
-}
-
-/* меняет цвет иконки, когда в диве филд-враппер
- есть элемент с фокусом */
-/* .field-wrapper:focus-within>.icon {
-  fill: var(--accent);
-} */
 .form__comment {
   margin-bottom: 20px;
   padding-top: 12px;
@@ -891,8 +915,7 @@ p {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form__comment:hover,
-.form__comment:focus {
+.form__comment:hover, .form__comment:focus {
   border-color: #2196f3;
   outline: none;
 }
@@ -925,30 +948,6 @@ p {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form__check-label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 30px;
-}
-
-.form__checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-
 .form__icon-check {
   width: 16px;
   height: 15px;
@@ -960,14 +959,5 @@ p {
 
 .form__checkbox:checked + .form__icon-check {
   background-image: url("../images/checked.svg");
-}
-
-.form__check-link {
-  color: #2196f3;
-}
-
-.form__button {
-  display: block;
-  margin: 0 auto;
 }
 /*# sourceMappingURL=main.css.map */
